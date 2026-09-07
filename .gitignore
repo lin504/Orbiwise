@@ -1,0 +1,24 @@
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.env
+
+# Java / Maven
+target/
+*.class
+*.jar
+*.war
+
+# OS
+.DS_Store
+Thumbs.db
