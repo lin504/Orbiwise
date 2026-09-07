@@ -25,7 +25,7 @@ Orbiwise/
 | 缓存 | Redis | Redis（会话存储） |
 | 向量库 | - | Milvus |
 | AI | - | LangChain + 阿里云千问（Qwen） |
-| Embedding | - | sentence-transformers |
+| Embedding | - | 阿里云 DashScope text-embedding |
 | 鉴权 | JWT + RBAC | - |
 | 文档 | SpringDoc OpenAPI | FastAPI Swagger |
 

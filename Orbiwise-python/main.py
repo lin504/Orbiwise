@@ -5,7 +5,6 @@ FastAPI AI RAG 旅游助手服务入口
 """
 
 import logging
-import os
 import sys
 from contextlib import asynccontextmanager
 
@@ -21,10 +20,6 @@ from services.embedding_service import EmbeddingService
 from services.rag_service import RagService
 from services.recommend_service import RecommendService
 from services.vector_store_service import VectorStoreService
-
-# 设置 Hugging Face 镜像源（国内网络无法直接访问 huggingface.co）
-# 必须在 Embedding 模型加载之前设置，huggingface_hub 会自动使用该端点下载模型
-os.environ["HF_ENDPOINT"] = settings.HF_ENDPOINT
 
 # 配置日志格式和级别
 logging.basicConfig(
