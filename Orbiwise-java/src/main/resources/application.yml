@@ -1,0 +1,59 @@
+# ==========================================
+# Orbiwise 在线旅游平台 - 应用配置
+# @author lin504
+# ==========================================
+
+server:
+  port: 8080
+
+spring:
+  # ---------- MySQL 数据源配置 ----------
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/orbiwise?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+    username: root
+    password: root
+
+  # ---------- Redis 配置 ----------
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      database: 0
+      timeout: 5000ms
+
+  # ---------- 文件上传配置 ----------
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+      max-request-size: 20MB
+
+# ---------- MyBatis-Plus 配置 ----------
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+  type-aliases-package: com.lony.orbiwise.entity
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-field: deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+# ---------- JWT 配置 ----------
+jwt:
+  secret-key: OrbiwiseTravelPlatformSecretKey2024ForJWTTokenGenerationAndValidation
+  expiration: 86400000  # 24小时，单位毫秒
+
+# ---------- AI 服务配置 ----------
+ai:
+  service-url: http://localhost:8000
+
+# ---------- 日志配置 ----------
+logging:
+  level:
+    com.lony.orbiwise: debug
+    com.lony.orbiwise.mapper: debug
