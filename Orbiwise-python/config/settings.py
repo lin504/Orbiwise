@@ -35,6 +35,10 @@ class Settings(BaseSettings):
     # 使用的千问模型名称（可选：qwen-turbo / qwen-plus / qwen-max）
     LLM_MODEL_NAME: str = "qwen-plus"
 
+    # ==================== Hugging Face 镜像源配置 ====================
+    # Hugging Face 镜像端点（国内网络环境建议 hf-mirror.com）
+    HF_ENDPOINT: str = "https://hf-mirror.com"
+
     # ==================== Embedding 模型配置 ====================
     # 中文 Embedding 模型名称（基于 sentence-transformers 加载）
     EMBEDDING_MODEL_NAME: str = "shibing624/text2vec-base-chinese"
