@@ -5,8 +5,8 @@
 -- 说明: 共16张核心业务表，包含索引、字段注释
 -- ============================================================
 
--- 创建数据库
-CREATE DATABASE IF NOT EXISTS `orbiwise` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci COMMENT '在线旅游平台数据库';
+-- 创建数据库（MySQL 不支持 CREATE DATABASE COMMENT，注释写在上方）
+CREATE DATABASE IF NOT EXISTS `orbiwise` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `orbiwise`;
 
 -- ============================================================
@@ -217,8 +217,8 @@ CREATE TABLE `user_behavior` (
     `id` BIGINT NOT NULL AUTO_INCREMENT COMMENT '行为记录ID，主键自增',
     `user_id` BIGINT NOT NULL COMMENT '用户ID',
     `target_id` BIGINT NOT NULL COMMENT '目标ID（景点ID/攻略ID等）',
-    `target_type` TINYINT NOT NULL COMMENT '目标类型：1-景点，2-攻略，3-门票',
-    `behavior_type` TINYINT NOT NULL COMMENT '行为类型：1-浏览，2-收藏，3-下单，4-搜索，5-分享',
+    `target_type` VARCHAR(20) NOT NULL COMMENT '目标类型：scenic-景点，strategy-攻略，ticket-门票',
+    `behavior_type` VARCHAR(20) NOT NULL COMMENT '行为类型：view-浏览，collect-收藏，order-下单，like-点赞，search-搜索',
     `behavior_desc` VARCHAR(500) DEFAULT NULL COMMENT '行为描述，如搜索关键词',
     `create_time` DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '行为发生时间',
     PRIMARY KEY (`id`),
