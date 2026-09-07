@@ -24,7 +24,7 @@ Orbiwise/
 | 数据库 | MySQL 8.0 | - |
 | 缓存 | Redis | Redis（会话存储） |
 | 向量库 | - | Milvus |
-| AI | - | LangChain + OpenAI |
+| AI | - | LangChain + 阿里云千问（Qwen） |
 | Embedding | - | sentence-transformers |
 | 鉴权 | JWT + RBAC | - |
 | 文档 | SpringDoc OpenAPI | FastAPI Swagger |
@@ -80,7 +80,7 @@ pip install -r requirements.txt
 
 # 复制环境变量配置并修改
 cp .env.example .env
-# 编辑 .env，填入 LLM API Key 等配置
+# 编辑 .env，填入阿里云 ALIYUN_API_KEY 等配置
 
 # 启动服务
 python main.py

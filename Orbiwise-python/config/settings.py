@@ -27,13 +27,13 @@ class Settings(BaseSettings):
     # Redis 数据库编号（默认使用 DB 1 与业务数据隔离）
     REDIS_DB: int = 1
 
-    # ==================== 大模型 API 配置（OpenAI 兼容接口） ====================
-    # LLM API 基础地址（支持 OpenAI 兼容的第三方接口）
-    LLM_API_BASE: str = "https://api.openai.com/v1"
-    # LLM API 密钥
-    LLM_API_KEY: str = "your-api-key-here"
-    # 使用的模型名称
-    LLM_MODEL_NAME: str = "gpt-3.5-turbo"
+    # ==================== 阿里云千问大模型 API 配置（DashScope OpenAI 兼容接口） ====================
+    # 阿里云 API 密钥（环境变量名：ALIYUN_API_KEY）
+    ALIYUN_API_KEY: str = "your-aliyun-api-key-here"
+    # DashScope OpenAI 兼容接口地址
+    LLM_API_BASE: str = "https://dashscope.aliyuncs.com/compatible-mode/v1"
+    # 使用的千问模型名称（可选：qwen-turbo / qwen-plus / qwen-max）
+    LLM_MODEL_NAME: str = "qwen-plus"
 
     # ==================== Embedding 模型配置 ====================
     # 中文 Embedding 模型名称（基于 sentence-transformers 加载）

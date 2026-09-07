@@ -61,13 +61,13 @@ class RagService:
             decode_responses=True,
         )
 
-        # 配置 LangChain LLM（使用 OpenAI 兼容接口）
+        # 配置 LangChain LLM（使用阿里云千问 DashScope OpenAI 兼容接口）
         self.llm = ChatOpenAI(
-            # 模型名称
+            # 千问模型名称（qwen-turbo / qwen-plus / qwen-max）
             model=settings.LLM_MODEL_NAME,
-            # API 密钥
-            openai_api_key=settings.LLM_API_KEY,
-            # API 基础地址（支持第三方兼容接口）
+            # 阿里云 DashScope API 密钥
+            openai_api_key=settings.ALIYUN_API_KEY,
+            # DashScope OpenAI 兼容接口地址
             openai_api_base=settings.LLM_API_BASE,
             # 生成温度，控制回答的随机性
             temperature=0.7,
